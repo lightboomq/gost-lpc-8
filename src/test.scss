@@ -55,12 +55,19 @@
         margin-top:-8px;
       }
       details summary:before{
+        display: inline-block;
         margin-right: 6px;
         color:#BBBDC1;
+        
+        width: 17px;
+        height: 17px;
       } 
       details[open]summary:before{
-        content: '\2B9F';
+        display: inline-block;
+        
         color:black;
+        width: 17px;
+        height: 17px;
       }  
   }
 }
