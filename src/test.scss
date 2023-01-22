@@ -8,9 +8,38 @@
     flex-direction: column;
     margin: auto;
     max-width: 900px;
+    .scroll-to-up{
+      display: none;
+      position: fixed;
+      right: 15px;
+      bottom: 90px;
+      width: 50px;
+      height: 50px;
+      z-index: 9999;
+      cursor: pointer;
+    }
+    @media(max-width:650px){
+      .scroll-to-up{
+      display: block;
+    }
+  }
     .main{ 
       .main__block-search{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         max-width: 100%;
+        button{
+          all:unset;
+          margin-top: 15px;
+          margin-right: 10px;
+          width: 70px;
+          height: 28px;
+          background-color: #A2A9B1;
+          border-radius: 50px;
+          cursor:pointer; 
+          
+        }
       }
       .main__search{
         display: flex;
@@ -62,5 +91,27 @@
       details[open]summary:before{
         content:url(./assets/arrow-up.svg);
       }  
+  }
+  
+}
+button{
+  margin-top:150px;
+  margin-left:250px;
+}
+body:a{
+  background-color: #27242F;
+  .main__search{
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+  }
+  input::placeholder{
+    color:black;
+   }
+  summary{
+    color:whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+  }
+  p{
+    color:whitesmoke;
   }
 }
