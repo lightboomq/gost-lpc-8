@@ -26,27 +26,27 @@ function App() {
   };
 
   const [searchValue,setSearchValue] = React.useState('');
-  const [size,setSize]= React.useState();
-  const [sum,setSum]= React.useState();
+  const [size,setSize]= React.useState('');
+  const [sum,setSum]= React.useState('');
   
   
   function result(num1,num2){
-    let value1,value2,value3,otvet;
+    let value1,value2,value3,result;
   
-    if(num2 == 0){
-      value1 = num2;
+    if(num2 === 0){
+      value1 = +num2;
     }
     else{
-      value1 = num1 * num2
+      value1 = num1 * num2;
     }
-    if(num2 == 2 || num2 == 0){
+    if(num2 === 2 || num2 === 0){
       value2 = num2;
     }
     else{
       value2 = num2-1;
     }
     value3 = value2 * 3 + 20;
-    return otvet = (515-(value1+value3)) / 2;
+    return  (515-(value1+value3)) / 2;
   }
     
  
@@ -57,17 +57,17 @@ function App() {
         <div className='main'>
           <div className='main__block-search'>
               <div className='main__search'>
-                <img className='main__search-icon' width={20} height={20} src="/img/search-icon-input.svg"/>
+                <img className='main__search-icon' width={20} height={20} src="/img/search-icon-input.svg" alt=""/>
                 <input value={searchValue} onChange={(event)=>setSearchValue(event.target.value)} placeholder='Поиск...'></input> 
                 
-                {searchValue?<img className='main__search-clear' onClick={()=>setSearchValue('') } width={17} height={17} src="/img/close-search-input.svg"/>:""}
+                {searchValue?<img className='main__search-clear' onClick={()=>setSearchValue('') } width={17} height={17} src="/img/close-search-input.svg" alt=""/>:""}
               </div>
               
           </div>
           <form>
             <input value={size} onChange={(event)=>setSize(event.target.value)} placeholder='Ширина полосы' />
             <input value={sum} onChange={(event)=>setSum(event.target.value)} placeholder='К-во полос'/>
-            <p>{result(size,sum)}</p>
+             {size || sum? <p>{result(size,sum)}</p>:""}
           </form>
           
           
@@ -79,7 +79,7 @@ function App() {
               return false;
             }
           }).map((obj,i)=>(<details key={i}> 
-            <summary>{obj.title}</summary> <img onClick={()=>scrollUp()} className='scroll-to-up' src="./img/scroll-to-up.svg"/>
+            <summary>{obj.title}</summary> <img onClick={()=>scrollUp()} className='scroll-to-up' src="./img/scroll-to-up.svg"alt=""/>
             {obj.text}
           </details>))}   
         </div>
