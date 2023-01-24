@@ -20,13 +20,37 @@ function App() {
                    В конце XIX, начале XX века появились новые технологии производства металлов. Речь идёт о бессемеровском, томасовском и, наконец, мартеновском способах. Они помогли людям в разы увеличить производственные объёмы с выпуском металлов от шести тонн в час. Спустя 50 лет появились безостановочная разливка стали и метод кислородного дутья. На современном этапе учёные активно развивают разные технологии обогащения руд и производства стали в электрических печах.</p></div>}, 
                 ]); 
 
-  const [searchValue,setSearchValue] = React.useState('');
-  const [theme,setTheme] = React.useState(false);
+ 
   const scrollUp = () =>{
     window.scrollTo({top:0,behavior:'smooth'});
   };
+
+  const [searchValue,setSearchValue] = React.useState('');
+  const [size,setSize]= React.useState();
+  const [sum,setSum]= React.useState();
+  
+  
+  function result(num1,num2){
+    let value1,value2,value3,otvet;
+  
+    if(num2 == 0){
+      value1 = num2;
+    }
+    else{
+      value1 = num1 * num2
+    }
+    if(num2 == 2 || num2 == 0){
+      value2 = num2;
+    }
+    else{
+      value2 = num2-1;
+    }
+    value3 = value2 * 3 + 20;
+    return otvet = (515-(value1+value3)) / 2;
+  }
+    
  
-                      
+  
   return (
     <>
       <div className="container">
@@ -38,8 +62,14 @@ function App() {
                 
                 {searchValue?<img className='main__search-clear' onClick={()=>setSearchValue('') } width={17} height={17} src="/img/close-search-input.svg"/>:""}
               </div>
-              <button onClick = {()=>setTheme(!theme)} className={theme==true? 'active' : ''}></button>
+              
           </div>
+          <form>
+            <input value={size} onChange={(event)=>setSize(event.target.value)} placeholder='Ширина полосы' />
+            <input value={sum} onChange={(event)=>setSum(event.target.value)} placeholder='К-во полос'/>
+            <p>{result(size,sum)}</p>
+          </form>
+          
           
           {todo.filter(obj=>{
             if (obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())){
@@ -55,6 +85,7 @@ function App() {
         </div>
       </div> 
     </>
+    
   );
 }
 export default App;
