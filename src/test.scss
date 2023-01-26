@@ -96,7 +96,8 @@
   .grid * {
     display: grid;
     text-align: center;
-    height: 35px;
+    justify-content: end;
+    height: 30px;
     border: solid 1px #B1B7BD;
     &.grid__1{
       align-items: center;
@@ -114,11 +115,9 @@
   }
   .grid{
    display: grid;
-   grid-template-columns: repeat(4,20%);
-   justify-content: start;
+   grid-template-columns: 20% 20% 20% 0%;
+   justify-content: center;
    margin-top: 15px;
-   margin-left: 15px;
-   
    .grid__input-1{
     all:unset;
     text-align: center;
@@ -135,33 +134,58 @@
     border-left: 1px solid #B1B7BD;
    }
   }
-}
 
+.gridG1 * {
+  display: grid;
+  text-align: center;
+  height: 30px;
+  border: solid 1px #B1B7BD;
 
-
-
-
-
-
-
-button{
-  margin-top:150px;
-  margin-left:250px;
-}
-body:a{
-  background-color: #27242F;
-  .main__search{
-    border: 1px solid whitesmoke;
-    background-color: whitesmoke;
+  &.grid__1-result-G1{
+    align-items: center;
+    color:green;
+    border-left: 1px solid #B1B7BD;
   }
-  input::placeholder{
-    color:black;
+  &.grid__4{
+    border-radius: 0px 10px 10px 0px;
+    border-left: 0px solid #B1B7BD;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+  }
+  &.grid__1-result-G1:last-child {
+    border-radius: 0 10px 10px 0; 
+  }
+}
+  .gridG1{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15% 0%;
+    justify-content: center;
+    margin-top: 15px;
+    .grid__input-size-G1{
+     all:unset;
+     text-align: center;
+     border-top:1px solid #B1B7BD;
+     border-bottom:1px solid #B1B7BD;
+     border-left: 1px solid #B1B7BD;
+     border-radius: 10px 0px 0px 10px;
+    }
+    .grid__input-size-G2{
+     all:unset;
+     text-align: center;
+     border-top:1px solid #B1B7BD;
+     border-bottom:1px solid #B1B7BD;
+     border-left: 1px solid #B1B7BD;
+    }
+    .grid__input-size-G3{
+     all:unset;
+     text-align: center;
+     border-top:1px solid #B1B7BD;
+     border-bottom:1px solid #B1B7BD;
+     border-left: 1px solid #B1B7BD;
+    }
+    .grid__input-sum-G1{
+      font-size: 16px;
+      border-right: 0px solid #B1B7BD;
+    }
    }
-  summary{
-    color:whitesmoke;
-    border-bottom: 1px solid whitesmoke;
-  }
-  p{
-    color:whitesmoke;
-  }
 }

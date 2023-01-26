@@ -28,12 +28,17 @@ function App() {
   const [searchValue,setSearchValue] = React.useState('');
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
+
+  const [sizeG1,setSizeG1]= React.useState('');
+  const [sizeG2,setSizeG2]= React.useState('');
+  const [sizeG3,setSizeG3]= React.useState('');
+  const [sumG1,setSumG1]= React.useState('');
+  
   
   function result(num1,num2){
     let value1,value2,value3;
-    if(num1<12 || num2==''){
-      value3='';
-      return value3;
+    if(num1<12 || num2>28){
+      return false;
     }
     if(num2>1){
       value1=num1*num2;
@@ -72,9 +77,70 @@ function App() {
       setSum(+value);
     }
   }
+  const handleChangeSizeG1ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSizeG1(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSizeG1(+value)
+    }
+  }
+  const handleChangeSizeG2ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSizeG2(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSizeG2(+value)
+    }
+  }
+  const handleChangeSizeG3ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSizeG3(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSizeG3(+value)
+    }
+  }
+  const handleChangeSumG1ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSumG1(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSumG1(+value);
+    }
+  }
   function clearAll(){
     setSize("");
     setSum("");
+  }
+  function clearAllG1(){
+    setSizeG1("");
+    setSizeG2("");
+    setSizeG3("");
+    setSumG1("");
+  }
+  function resultG1(num1,num2,num3,num4){
+    let value1,value2,value3;
+    if(!num4 || num4>3){
+      return false;
+    }
+    value1=(num1 || 0) + (num2 || 0) + (num3 || 0) 
+    if(num4=2){
+      value2=(num4 || 0) * 3 + 20;
+    }
+    else{
+      value2=((num4 || 0) - 1) * 3 + 20
+    }
+    value3=(515-(value1+value2)) / 2;
+    return value3;        
   }
  
   return (
@@ -90,11 +156,21 @@ function App() {
               </div>
               
           </div>
+        
           {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='Р' />
-            <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder='К-во П' /> 
+            <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' П' /> 
             <div className='grid__1'>{result(size,sum)}</div>
             {size ?<img onClick={clearAll} className={size?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" />:""}
+          </div>}
+
+          {searchValue? "":<div className='gridG1'>
+            <input className='grid__input-size-G1' value={sizeG1} onChange={handleChangeSizeG1ValueInput} placeholder='Р1' />
+            <input className='grid__input-size-G2' value={sizeG2} onChange={handleChangeSizeG2ValueInput} placeholder='Р2' />
+            <input className='grid__input-size-G3' value={sizeG3} onChange={handleChangeSizeG3ValueInput} placeholder='Р3' />
+            <input className='grid__input-sum-G1'  value={sumG1} onChange={handleChangeSumG1ValueInput} placeholder='П' /> 
+            <div className='grid__1-result-G1'>{resultG1(sizeG1,sizeG2,sizeG3,sumG1)}</div>
+            {sizeG1 ?<img onClick={clearAllG1} className={sizeG1 || sizeG2 || sizeG3?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" />:""}
           </div>}
             
           
