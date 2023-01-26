@@ -93,8 +93,60 @@
         content:url(./assets/arrow-up.svg);
       }  
   }
-  
+  .grid * {
+    display: grid;
+    text-align: center;
+    height: 35px;
+    border: solid 1px gray;
+    &.grid__1{
+      border-radius: 10px 0px 0px 10px;
+      align-items: center;
+    }
+    &.grid__4{
+      border-radius: 0px 10px 10px 0px;
+      align-items: center;
+    }
+  }
+  .grid{
+   display: grid;
+   grid-template-columns: repeat(4,20%);
+   justify-content: center;
+   margin-top: 15px;
+   
+   .grid__input-1{
+    all:unset;
+    text-align: center;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+   }
+   .grid__input-2{
+    all:unset;
+    text-align: center;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+    border-left: 1px solid gray;
+   }
+  }
+  .roller-absolute-1{
+    position: absolute;
+    background-color: #A2A9B1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    
+    
+    
+    
+  }
 }
+
+
+
+
+
+
+
+
 button{
   margin-top:150px;
   margin-left:250px;

@@ -29,28 +29,49 @@ function App() {
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
   
-  
   function result(num1,num2){
-    let value1,value2,value3,result;
+    let value1,value2,value3;
+    if(num1<12 || num2==''){
+      value3='';
+      return value3;
+    }
+    if(num2>1){
+      value1=num1*num2;
+        if(num2==2){
+          value2=num2 * 3 + 20;
+        }
+        else{
+          value2=(num2-1) * 3 + 20;
+        }
+        return value3=(515-(value1+value2))/2;  
+    }
+    else if(num2==0 || num2==1 || num2==2){
+      value1=num1+20; 
+      return value3=(515-value1)/2; 
+    }
+}
   
-    if(num2 === 0){
-      value1 = +num2;
+  const handleChangeSizeValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize(value);
     }
-    else{
-      value1 = num1 * num2;
+    if (onlyNumbers.test(value)) {
+      setSize(+value)
     }
-    if(num2 === 2 || num2 === 0){
-      value2 = num2;
-    }
-    else{
-      value2 = num2-1;
-    }
-    value3 = value2 * 3 + 20;
-    return  (515-(value1+value3)) / 2;
   }
-    
- 
-  
+
+  const handleChangeSumValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSum(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSum(+value);
+    }
+  }
   return (
     <>
       <div className="container">
@@ -64,11 +85,13 @@ function App() {
               </div>
               
           </div>
-          <form>
-            <input value={size} onChange={(event)=>setSize(event.target.value)} placeholder='Ширина полосы' />
-            <input value={sum} onChange={(event)=>setSum(event.target.value)} placeholder='К-во полос'/>
-             {size || sum? <p>{result(size,sum)}</p>:""}
-          </form>
+          <div className='grid'>
+            <div className='grid__1'>{result(size,sum)}</div>
+            <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='Р1' /> 
+            <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder='К-во П' /> 
+            <div className='grid__4' >{result(size,sum)}</div >
+          </div>
+            
           
           
           {todo.filter(obj=>{
