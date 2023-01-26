@@ -97,46 +97,38 @@
     display: grid;
     text-align: center;
     height: 35px;
-    border: solid 1px gray;
+    border: solid 1px #B1B7BD;
     &.grid__1{
-      border-radius: 10px 0px 0px 10px;
       align-items: center;
     }
     &.grid__4{
       border-radius: 0px 10px 10px 0px;
+      border-left: 0px solid #B1B7BD;
       align-items: center;
     }
   }
   .grid{
    display: grid;
    grid-template-columns: repeat(4,20%);
-   justify-content: center;
+   justify-content: start;
    margin-top: 15px;
+   margin-left: 15px;
    
    .grid__input-1{
     all:unset;
     text-align: center;
-    border-top:1px solid gray;
-    border-bottom:1px solid gray;
+    border-top:1px solid #B1B7BD;
+    border-bottom:1px solid #B1B7BD;
+    border-left: 1px solid #B1B7BD;
+    border-radius: 10px 0px 0px 10px;
    }
    .grid__input-2{
     all:unset;
     text-align: center;
-    border-top:1px solid gray;
-    border-bottom:1px solid gray;
-    border-left: 1px solid gray;
+    border-top:1px solid #B1B7BD;
+    border-bottom:1px solid #B1B7BD;
+    border-left: 1px solid #B1B7BD;
    }
-  }
-  .roller-absolute-1{
-    position: absolute;
-    background-color: #A2A9B1;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    
-    
-    
-    
   }
 }
 
