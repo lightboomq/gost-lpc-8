@@ -100,11 +100,16 @@
     border: solid 1px #B1B7BD;
     &.grid__1{
       align-items: center;
+      color:green;
     }
     &.grid__4{
       border-radius: 0px 10px 10px 0px;
       border-left: 0px solid #B1B7BD;
       align-items: center;
+      border-radius: 0px 10px 10px 0px;
+    }
+    &.grid__1:last-child {
+      border-radius: 0 10px 10px 0; 
     }
   }
   .grid{

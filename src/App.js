@@ -76,6 +76,7 @@ function App() {
     setSize("");
     setSum("");
   }
+ 
   return (
     <>
       <div className="container">
@@ -90,10 +91,10 @@ function App() {
               
           </div>
           {searchValue? "":<div className='grid'>
-            <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='Р1' />
+            <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='Р' />
             <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder='К-во П' /> 
             <div className='grid__1'>{result(size,sum)}</div>
-            {size && sum?<img onClick={clearAll} className='grid__4' width={30} height={30} src="/img/close-input.svg" />:""}
+            {size ?<img onClick={clearAll} className={size?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" />:""}
           </div>}
             
           
