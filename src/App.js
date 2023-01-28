@@ -42,20 +42,6 @@ function App() {
       return value3=(515-value1)/2; 
     }
 }
-function resultG1(num1,num2,num3){
-  let value1,value2,value3,value4,value5;
-  value1=num1+num2*(num3-2)
-  value2=(num3-1)*3+20;
-  value3=(num3-2)*value1;
-  value4=value3+value2; 
-  value5=(515-value4)/2;                
-  console.log("value1="+value1);
- 
-}
-resultG1(20,20,7)
-
-
-
   const handleChangeSizeValueInput = (event) => {
     const onlyNumbers = /^[0-9\b]+$/
     const value = event.target.value
@@ -89,7 +75,7 @@ resultG1(20,20,7)
         <div className='main'>  
         {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='р' />
-            <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' к-п' /> 
+            <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' к-во ' /> 
             <div className='grid__1'>{result(size,sum)}</div>
             {size ?<img onClick={clearAll} className={size?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" />:""}
           </div>}

@@ -110,13 +110,12 @@
       
     }
     &.grid__4{
-      border-radius: 0px 10px 10px 0px;
       border-left: 0px solid #B1B7BD;
       align-items: center;
-      border-radius: 0px 10px 10px 0px;
+      border-radius: 0px 5px 5px 0px;
     }
     &.grid__1:last-child {
-      border-radius: 0 10px 10px 0; 
+      border-radius: 0 5px 5px 0; 
     }
   }
   .grid{
@@ -131,7 +130,7 @@
     border-top:1px solid #B1B7BD;
     border-bottom:1px solid #B1B7BD;
     border-left: 1px solid #B1B7BD;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 5px 0px 0px 5px;
    }
    .grid__input-2{
     all:unset;
