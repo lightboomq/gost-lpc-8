@@ -24,7 +24,11 @@
       display: block;
     }
   }
+    
     .main{ 
+      img{
+        width: 100%;
+      }
       .main__block-search{
         display: flex;
         justify-content: space-between;
@@ -38,8 +42,7 @@
           height: 28px;
           background-color: #A2A9B1;
           border-radius: 50px;
-          cursor:pointer; 
-          
+          cursor:pointer;    
         }
       }
       .main__search{
@@ -96,12 +99,12 @@
   .grid * {
     display: grid;
     text-align: center;
-    justify-content: end;
-    height: 30px;
+    height: 28px;
     border: solid 1px #B1B7BD;
     &.grid__1{
       align-items: center;
       color:green;
+      
     }
     &.grid__4{
       border-radius: 0px 10px 10px 0px;
@@ -116,8 +119,9 @@
   .grid{
    display: grid;
    grid-template-columns: 20% 20% 20% 0%;
-   justify-content: center;
+   justify-content: start;
    margin-top: 15px;
+   margin-left: 10px;
    .grid__input-1{
     all:unset;
     text-align: center;
@@ -134,58 +138,4 @@
     border-left: 1px solid #B1B7BD;
    }
   }
-
-.gridG1 * {
-  display: grid;
-  text-align: center;
-  height: 30px;
-  border: solid 1px #B1B7BD;
-
-  &.grid__1-result-G1{
-    align-items: center;
-    color:green;
-    border-left: 1px solid #B1B7BD;
-  }
-  &.grid__4{
-    border-radius: 0px 10px 10px 0px;
-    border-left: 0px solid #B1B7BD;
-    align-items: center;
-    border-radius: 0px 10px 10px 0px;
-  }
-  &.grid__1-result-G1:last-child {
-    border-radius: 0 10px 10px 0; 
-  }
-}
-  .gridG1{
-    display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15% 0%;
-    justify-content: center;
-    margin-top: 15px;
-    .grid__input-size-G1{
-     all:unset;
-     text-align: center;
-     border-top:1px solid #B1B7BD;
-     border-bottom:1px solid #B1B7BD;
-     border-left: 1px solid #B1B7BD;
-     border-radius: 10px 0px 0px 10px;
-    }
-    .grid__input-size-G2{
-     all:unset;
-     text-align: center;
-     border-top:1px solid #B1B7BD;
-     border-bottom:1px solid #B1B7BD;
-     border-left: 1px solid #B1B7BD;
-    }
-    .grid__input-size-G3{
-     all:unset;
-     text-align: center;
-     border-top:1px solid #B1B7BD;
-     border-bottom:1px solid #B1B7BD;
-     border-left: 1px solid #B1B7BD;
-    }
-    .grid__input-sum-G1{
-      font-size: 16px;
-      border-right: 0px solid #B1B7BD;
-    }
-   }
 }
