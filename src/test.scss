@@ -26,8 +26,9 @@
   }
     
     .main{ 
-      img{
-        width: 100%;
+      .gost-503-81{
+        margin-top: 15px;
+        width: 100%; 
       }
       .main__block-search{
         display: flex;
@@ -72,6 +73,7 @@
       }
       details{
         margin-left: 10px;
+        margin-right: 10px;
       }
       summary{
         list-style: none;
