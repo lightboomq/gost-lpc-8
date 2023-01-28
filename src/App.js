@@ -80,8 +80,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className='main'> 
-        <h1>АРСЕНИЙ СОСИ ХУЙ</h1> 
+        <div className='main'>  
         {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='р' />
             <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' к-во ' /> 
