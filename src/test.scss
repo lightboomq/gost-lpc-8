@@ -12,8 +12,8 @@
     .scroll-to-up{
       display: none;
       position: fixed;
-      right: 15px;
-      bottom: 90px;
+      right: 0;
+      bottom: 0px;
       width: 50px;
       height: 50px;
       z-index: 9999;
@@ -87,6 +87,21 @@
         padding: 0px 10px 0px 10px;
         margin-top:15px;
       }
+      h3{
+        margin: auto;
+        margin-top:15px;
+        color:blue;
+      }
+      .h4-first-element{
+        margin-top: 15px;
+      }
+      h4{
+        color:red;
+      }
+      .div-503-81{
+        display: flex;
+        flex-direction: column;
+      }
       .p-margin-top{
         margin-top:-8px;
       }
@@ -107,7 +122,6 @@
     &.grid__1{
       align-items: center;
       color:green;
-      
     }
     &.grid__4{
       border-left: 0px solid #B1B7BD;
