@@ -3,7 +3,9 @@ import "./notFound.scss";
 
 function NotFound (){
     return(
-        <div>не найдено</div>
+        <div>
+            <h3>Странно...<br/>но ничего нет</h3>
+        </div>
     )
 }
 

@@ -1,7 +1,6 @@
 import './test.scss';
 import React from 'react';
-
-
+import NotFound from './NotFound/NotFound';
 function App() {
   const [todo] = React.useState([
                   {title:"Гост 503-81", 
@@ -10,11 +9,11 @@ function App() {
                     <img className="gost-503-81" src="/img/503-81-2.png" alt="2"/>
                     <img className="gost-503-81" src="/img/503-81-3.png" alt="3"/>
                     <h4 className='h4-first-element'>1. На обрезной ленте не допускаются торцевые трещины и зазубрены глубиной более половины предельного отклонения по ширине и заусенцы – более предельного отклонения по толщине.<br/>
-                     &nbsp; &nbsp;&nbsp;На необрезанной ленте не допускается рваная кромка глубиной более предельного отклонения по ширине ленты.</h4>
+                    На необрезанной ленте не допускается рваная кромка глубиной более предельного отклонения по ширине ленты.</h4>
                     <h4 className='h4-first-element'>2. Расслоение ленты не допускается.</h4>
                     <h4 className='h4-first-element'>3. Следы излома (световые линии) на дрессированной ленте 1 и 2-й групп не допускаются. На дрессированной ленте 3 и 4-й 
                     групп поверхности допускаются следы излома, глубиной не более 3 мкм.<br/>
-                    &nbsp; &nbsp;&nbsp;На недрессированной ленте всех групп поверхности допускается наличие изломов и полос – линий скольжения. Шероховатость поверхности недрессированной ленты не нормируется.</h4>
+                    На недрессированной ленте всех групп поверхности допускается наличие изломов и полос – линий скольжения. Шероховатость поверхности недрессированной ленты не нормируется.</h4>
                     <h4 className='h4-first-element'>4. Для лент с обрезной кромкой, изготовляемых с контролем серповидности, величина серповидности не должна превышать норм, указанных в табл.3</h4>
                     <h3>Обвязка полосы соломой в 3-х местах.</h3>
                     </div>},          
@@ -99,11 +98,11 @@ function App() {
           </div>
     
           {todo.filter(obj=>{
-            if (obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())){
+            if(obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())){
               return true;
             }
             else{
-              return false;  
+              return false;
             }
           }).map((obj,i)=>(<details key={i}> 
             <summary>{obj.title}</summary> <img onClick={()=>scrollUp()} className='scroll-to-up' src="./img/scroll-to-up.svg"alt=""/>
