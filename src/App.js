@@ -3,7 +3,7 @@ import React from 'react';
 import NotFound from './NotFound/NotFound';
 function App() {
   const [todo] = React.useState([
-                  {title:"Гост 503-8",
+                  {title:"Гост 503-81",
                    text:<div id='gost-503' className='div-503-81'>
                     <img className="gost-503-81" src="/img/503-81-1.png" alt="1"/>
                     <img className="gost-503-81" src="/img/503-81-2.png" alt="2"/>
