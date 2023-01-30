@@ -34,7 +34,7 @@ function App() {
                         Нагартованная - Н<br/>
                         Высоконагартованная	- ВН<br/>
                         <p>
-                        1.2 Лента из стали марок 08Ю, 08, 08кп, 08пчс, 10, 10кп, 10пс изготавливается размерами:<br/>
+                        1.2 Лента из стали марок 08Ю 08 08кп 08пс 10 10кп 10пс изготавливается размерами:<br/>
                         По толщине <span className='span-text-green'>от 1,0 до 4,0 мм.</span><br/>
                         По ширине <span className='span-text-green'>от 10 до 450 мм.</span><br/>
                         </p>
@@ -53,10 +53,10 @@ function App() {
                         <div id='grid-gost-14-4-1207-82-table' className='grid-gost-14-4-1207-82'>
                           <div>Состояние материала</div> <div>Марка стали</div> <div className='div-last-child2'>Хим.состав</div>
                           <div>ОВГ</div> <div>08Ю</div> <div className='div-last-child2'>Гост 9045-80</div>
-                          <div>ВГ</div> <div>08Ю,08кп,08пс</div> <div className='div-last-child2'>Гост 9045-80</div>
-                          <div>ОМ</div> <div>08кп,08пс,10кп</div> <div className='div-last-child2'>Гост 1050-74</div>
-                          <div>М</div> <div>08,08кп,08пс<br/>10,10кп,10пс</div> <div className='div-last-child2'>Гост 1050-74</div>
-                          <div>ПН,Н,ВН</div> <div>08,08кп,08пс<br/>10,10кп</div> <div className='div-last-child2'>Гост 1050-74</div>
+                          <div>ВГ</div> <div>08Ю 08кп 08пс</div> <div className='div-last-child2'>Гост 9045-80</div>
+                          <div>ОМ</div> <div>08кп 08пс 10кп</div> <div className='div-last-child2'>Гост 1050-74</div>
+                          <div>М</div> <div>08 08кп 08пс<br/>10 10кп 10пс</div> <div className='div-last-child2'>Гост 1050-74</div>
+                          <div>ПН Н ВН</div> <div>08 08кп 08пс<br/>10 10кп</div> <div className='div-last-child2'>Гост 1050-74</div>
                           <div className='div-last-child'>ВГ</div> <div className='div-last-child'>15кп </div> <div className='div-last-child1'>Гост 1050-74</div>
                         </div>
                         <p>2.2 Лента ОВГ, ВГ, ОМ, М поставляется в дрессированном состоянии.</p>
@@ -78,6 +78,7 @@ function App() {
   const [searchValue,setSearchValue] = React.useState('');
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
+  const [open,setOpen] = React.useState(false);
 
   function result(num1,num2){
     let value1,value2;

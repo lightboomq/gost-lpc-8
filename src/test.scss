@@ -101,16 +101,16 @@
       }
       .p-text-green{
         color:green;
-      }
-      details summary:before{ 
-        content:url(./assets/arrow-down.svg); 
-        margin-right: 6px;
-        margin-top: 10px;
-      } 
-      details[open]summary:before{
-        content:url(./assets/arrow-up.svg);
       }  
   }
+  details summary:before{ 
+    content:url(./assets/arrow-down.svg); 
+    margin-right: 6px;
+    margin-top: 10px;
+  } 
+  details[open]summary:before{
+    content:url(./assets/arrow-up.svg);
+  }  
   .grid-gost-14-4-1207-82 *{
     display: grid;
     text-align: center;
