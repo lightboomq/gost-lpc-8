@@ -84,21 +84,13 @@
       }
       
       p{
-        padding: 0px 10px 0px 10px;
         margin-top:15px;
       }
-      h3{
-        margin-top:15px;
-        
+      span{
+        font-weight: 900;
       }
-      .h4-first-element{
-        margin-top: 15px;
-      }
-      h1{
-        color:red;
-      }
-      h4{
-        font-size: 15px;
+      .span-text-green{
+        color:green;
       }
       .div-503-81{
         display: flex;
@@ -106,6 +98,9 @@
       }
       .p-margin-top{
         margin-top:-8px;
+      }
+      .p-text-green{
+        color:green;
       }
       details summary:before{ 
         content:url(./assets/arrow-down.svg); 
@@ -115,6 +110,30 @@
       details[open]summary:before{
         content:url(./assets/arrow-up.svg);
       }  
+  }
+  .grid-gost-14-4-1207-82 *{
+    display: grid;
+    text-align: center;
+    border: 1px solid #B1B7BD;;
+  }
+  .grid-gost-14-4-1207-82{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    div{
+      align-items: center;
+      border-bottom: 0px solid #B1B7BD;
+      border-right: 0px solid #B1B7BD;
+    }
+    .div-last-child{
+      border-bottom: 1px solid #B1B7BD;
+    }
+    .div-last-child1{
+      border-bottom: 1px solid #B1B7BD;
+      border-right: 1px solid #B1B7BD;
+    }
+    .div-last-child2{
+      border-right: 1px solid #B1B7BD;
+    }
   }
   .grid * {
     display: grid;
@@ -156,7 +175,4 @@
     border-left: 1px solid #B1B7BD;
    }
   }
-}
-strong{
-  margin-top:15px;
 }
