@@ -111,30 +111,6 @@
   details[open]summary:before{
     content:url(./assets/arrow-up.svg);
   }  
-  .grid-gost-14-4-1207-82 *{
-    display: grid;
-    text-align: center;
-    border: 1px solid #B1B7BD;;
-  }
-  .grid-gost-14-4-1207-82{
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    div{
-      align-items: center;
-      border-bottom: 0px solid #B1B7BD;
-      border-right: 0px solid #B1B7BD;
-    }
-    .div-last-child{
-      border-bottom: 1px solid #B1B7BD;
-    }
-    .div-last-child1{
-      border-bottom: 1px solid #B1B7BD;
-      border-right: 1px solid #B1B7BD;
-    }
-    .div-last-child2{
-      border-right: 1px solid #B1B7BD;
-    }
-  }
   .grid * {
     display: grid;
     text-align: center;
