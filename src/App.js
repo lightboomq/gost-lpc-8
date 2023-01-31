@@ -40,8 +40,7 @@ function App() {
   const [searchValue,setSearchValue] = React.useState('');
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
-  const [open,setOpen] = React.useState(false);
-
+  
   function result(num1,num2){
     let value1,value2;
     if(num1<12 || num2>28){
