@@ -25,7 +25,7 @@ function App() {
                     {
                       title:"Гост ТУ 14-1-5262-2008",
                       text:<div>
-                        <img className="img-gost-all" src="/img/5262-2008.png"/>
+                        <img className="img-gost-all" src="/img/5262.png" alt=""/>
                       </div>  
                     },
                     {
