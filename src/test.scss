@@ -134,7 +134,7 @@
   }
   .grid{
    display: grid;
-   grid-template-columns: 20% 20% 20% 0%;
+   grid-template-columns: 20% 20% 20% 20% 0%;
    justify-content: start;
    margin-top: 15px;
    margin-left: 10px;
@@ -153,5 +153,14 @@
     border-bottom:1px solid #B1B7BD;
     border-left: 1px solid #B1B7BD;
    }
+   .grid__input-3{
+    all:unset;
+    text-align: center;
+    border-top:1px solid #B1B7BD;
+    border-bottom:1px solid #B1B7BD;
+    border-left: 1px solid #B1B7BD;
+    
+   }
   }
+  
 }

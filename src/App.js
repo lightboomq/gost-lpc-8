@@ -8,7 +8,8 @@ function App() {
                     <img className="img-gost-all" src="/img/503-81-1.png" alt="1"/>
                     <img className="img-gost-all" src="/img/503-81-2.png" alt="2"/>
                     <img id='gost-503-2' className="img-gost-all" src="/img/503-81-3.png" alt="3"/>
-                    </div>},
+                    </div>
+                  },
                   {
                     title:"Гост ТУ 14-4-1207-82",
                     text:<div>
@@ -96,6 +97,10 @@ function App() {
   const [searchValue,setSearchValue] = React.useState('');
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
+  const [size2,setSize2]= React.useState('');
+  const [size3,setSize3]= React.useState('');
+  const [size4,setSize4]= React.useState('');
+  const [sum2,setSum2]= React.useState('');
   
   function result(num1,num2){
     let value1,value2;
@@ -117,6 +122,25 @@ function App() {
       return (515-value1)/2; 
     }
 }
+function resultTwo(num1,num2,num3){
+  let value1=num1,value2=num2,value3=num3,sum;
+  if(!value2){
+    return false;
+  }
+  if(!value3){
+    value1=num1+3;
+    value2=value1+num2+20;
+    sum = (515-value2)/2;
+    return sum;
+  }
+  else{
+    value1=num1+3;
+    value2=value1+num2+3;
+    value3=value2+num3+20;
+    sum=(515-value3)/2
+    return sum;
+  }
+}
   const handleChangeSizeValueInput = (event) => {
     const onlyNumbers = /^[0-9\b]+$/
     const value = event.target.value
@@ -127,7 +151,6 @@ function App() {
       setSize(+value)
     }
   }
-
   const handleChangeSumValueInput = (event) => {
     const onlyNumbers = /^[0-9\b]+$/
     const value = event.target.value
@@ -138,9 +161,45 @@ function App() {
       setSum(+value);
     }
   }
+  const handleChangeSize2ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize2(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSize2(+value)
+    }
+  }
+  const handleChangeSize3ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize3(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSize3(+value)
+    }
+  }
+  const handleChangeSize4ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize4(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSize4(+value)
+    }
+  }
+  
+
   function clearAll(){
     setSize("");
     setSum("");
+    setSize2("");
+    setSize3("");
+    setSize4("");
+    setSum2("");
   }
   function clearSearch(){
     setSearchValue("");
@@ -150,12 +209,21 @@ function App() {
     <>
       <div className="container">
         <div className='main'>  
+        
         {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='р' />
             <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' к-во ' /> 
             <div className='grid__1'>{result(size,sum)}</div>
             {size ?<img onClick={clearAll} className={size?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
+          
+          <div className='grid'>
+            <input className='grid__input-1' value={size2} onChange={handleChangeSize2ValueInput} placeholder='р1'/>
+            <input className='grid__input-2' value={size3} onChange={handleChangeSize3ValueInput} placeholder='р2'/>
+            <input className='grid__input-3' value={size4} onChange={handleChangeSize4ValueInput} placeholder='р3'/>
+            <div className='grid__1' >{resultTwo(size2,size3,size4,sum2)}</div>
+            {size2 || size3 || size4 ?<img onClick={clearAll} className={size2 || size3 || size4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
+          </div>
           
           <div className='main__block-search'>
               <div className='main__search'>
@@ -167,12 +235,13 @@ function App() {
               
           </div>
     
-          {todo.filter(obj=>(obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()))) 
-
+          {todo.filter(function(obj){
+            return obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+          })
           .map((obj,i)=>(<details key={i}> 
             <summary>{obj.title}</summary> <img onClick={()=>scrollUp()} className='scroll-to-up' src="./img/scroll-to-up.svg"alt=""/>
             {obj.text}
-          </details>))}   
+          </details>))}
         </div>
       </div> 
     </>
