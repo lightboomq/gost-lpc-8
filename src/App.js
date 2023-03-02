@@ -152,7 +152,7 @@ function resultTwo(num1,num2,num3){
 
 function resultThree(num1,num2,num3,num4){
   let value1=num1*num2,value2=num3*num4,value3,value4,value5,sum;
-   if(!num4){
+   if(!num1 || !num2 || !num3 || !num4){
     return false;
    }
     value3 = value1 + ((num2-1)*3);
@@ -292,7 +292,7 @@ function resultThree(num1,num2,num3,num4){
           <div className='grid'>
             <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1'/>
             <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='к-во'/>
-            <input className='grid__input-3' value={size6} onChange={handleChangeSize6ValueInput} placeholder='р3'/>
+            <input className='grid__input-3' value={size6} onChange={handleChangeSize6ValueInput} placeholder='р2'/>
             <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='к-во'/>
             <div className='grid__1' >{resultThree(size5,sum3,size6,sum4)}</div>
             {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
