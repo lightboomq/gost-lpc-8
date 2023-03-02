@@ -97,10 +97,17 @@ function App() {
   const [searchValue,setSearchValue] = React.useState('');
   const [size,setSize]= React.useState('');
   const [sum,setSum]= React.useState('');
+
   const [size2,setSize2]= React.useState('');
   const [size3,setSize3]= React.useState('');
   const [size4,setSize4]= React.useState('');
   const [sum2,setSum2]= React.useState('');
+
+  const [size5,setSize5]= React.useState('');
+  const [sum3,setSum3]= React.useState('');
+  const [size6,setSize6]= React.useState('');
+  const [sum4,setSum4]= React.useState('');
+  
   
   function result(num1,num2){
     let value1,value2;
@@ -122,6 +129,7 @@ function App() {
       return (515-value1)/2; 
     }
 }
+
 function resultTwo(num1,num2,num3){
   let value1=num1,value2=num2,value3=num3,sum;
   if(!value2){
@@ -141,6 +149,19 @@ function resultTwo(num1,num2,num3){
     return sum;
   }
 }
+
+function resultThree(num1,num2,num3,num4){
+  let value1=num1*num2,value2=num3*num4,value3,value4,value5,sum;
+   if(!num4){
+    return false;
+   }
+    value3 = value1 + ((num2-1)*3);
+    value4 = value2 + ((num4-1)*3);
+    value5=value3+value4+20;
+    sum=(515-value5)/2;
+    return sum;
+  }
+  
   const handleChangeSizeValueInput = (event) => {
     const onlyNumbers = /^[0-9\b]+$/
     const value = event.target.value
@@ -191,15 +212,59 @@ function resultTwo(num1,num2,num3){
       setSize4(+value)
     }
   }
+  const handleChangeSize5ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize5(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSize5(+value)
+    }
+  }
+  const handleChangeSize6ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSize6(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSize6(+value)
+    }
+  }
   
+  const handleChangeSum3ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSum3(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSum3(+value);
+    }
+  }
+  const handleChangeSum4ValueInput = (event) => {
+    const onlyNumbers = /^[0-9\b]+$/
+    const value = event.target.value
+    if (onlyNumbers.test(value) || value === '') {
+      setSum4(value);
+    }
+    if (onlyNumbers.test(value)) {
+      setSum4(+value);
+    }
+  }
 
   function clearAll(){
     setSize("");
-    setSum("");
     setSize2("");
     setSize3("");
     setSize4("");
+    setSize5("");
+    setSize6("");
+    setSum("");
     setSum2("");
+    setSum3("");
+    setSum4("");
   }
   function clearSearch(){
     setSearchValue("");
@@ -223,6 +288,14 @@ function resultTwo(num1,num2,num3){
             <input className='grid__input-3' value={size4} onChange={handleChangeSize4ValueInput} placeholder='р3'/>
             <div className='grid__1' >{resultTwo(size2,size3,size4,sum2)}</div>
             {size2 || size3 || size4 ?<img onClick={clearAll} className={size2 || size3 || size4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
+          </div>
+          <div className='grid'>
+            <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1'/>
+            <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='к-во'/>
+            <input className='grid__input-3' value={size6} onChange={handleChangeSize6ValueInput} placeholder='р3'/>
+            <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='к-во'/>
+            <div className='grid__1' >{resultThree(size5,sum3,size6,sum4)}</div>
+            {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>
           
           <div className='main__block-search'>
