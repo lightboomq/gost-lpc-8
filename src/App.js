@@ -250,6 +250,7 @@ else {
   return (
     <>
       <div className="container">
+      
         <div className='main'>
             {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='р' />
@@ -258,7 +259,7 @@ else {
             {size ?<img onClick={clearAll} className={size?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
           
-          
+          <Manual manualProps={manual} setManualProps={setManual}/>
           {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1 '/>
             <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='р2 / к'/>
@@ -267,7 +268,6 @@ else {
             <div className='grid__1' >{resultTwo(size5,sum3,size6,sum4)}</div>
             {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
-          <Manual manualProps={manual} setManualProps={setManual}/>
           <div className='main__block-search'>
               <div className='main__block-img'>
               
@@ -281,7 +281,7 @@ else {
             </div>
             <img onClick={()=>setManual(!manual)} className='info' width={30} height={30} src="img/manual.png"/>
           </div>
-    
+          
           {todo.filter(function(obj){
             return obj.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
           })

@@ -9,8 +9,7 @@
     flex-direction: column;
     margin: auto;
     max-width: 900px;
-    height: 1000px;
-    position: relative;
+  
     .scroll-to-up{
       display: none;
       position: fixed;
@@ -28,7 +27,7 @@
   }
     
     .main{ 
-     
+      position: relative;
       .img-gost-all{
         width: 100%; 
         margin-top: 15px;

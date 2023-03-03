@@ -1,46 +1,49 @@
 import "./manual.scss"
-import photo from "../assets/type1.png";
+
 function Manual({manualProps,setManualProps}){
     return(
         <div className={manualProps?'manual active':'manual'}>
-            <strong>Инструкция вычисления</strong>
-        <div className="div-border">
-            <div>Условный размер 1-го типа<br/><strong>3x70(5)</strong>
+            <div className="close-manual-block">
+                <img className="close-manual" width={35} height={35} onClick={()=>setManualProps(false)} src='/img/close-manual.svg'/>
             </div>
-            <img src={photo}/>
-            Корень = 66.5
+            <strong>Инструкция вычисления </strong>
+        <div className="div-border">
+            <div className="div-margin-top">Условный размер 1-го типа<br/><strong>3x70(5)</strong>
+            </div>
+            <img src="/img/type1.png"/>
+           <span className="span-margin-top">Корень = 66.5</span> 
         </div>
         <div className="div-border">
-            <div>Условный размер 2-го типа(Горбатка)<br/><strong>3x100(1)+120(1)</strong>
+            <div className="div-margin-top">Условный размер 2-го типа(Горбатка)<br/><strong>3x100(1)+120(1)</strong>
             </div>
             <img src="/img/type2.png"/>
-            Корень = 136
+            <span className="span-margin-top">Корень = 136</span>
         </div>
         <div className="div-border">
-            <div>Условный размер 3-го типа(Горбатка)<br/><strong>3x100(1)+115(1)+90(1)</strong>
+            <div className="div-margin-top">Условный размер 3-го типа(Горбатка)<br/><strong>3x100(1)+115(1)+90(1)</strong>
             </div>
-            <img src="../assets/type3.png"/>
-            Корень = 92
+            <img src="/img/type3.png"/>
+            <span className="span-margin-top">Корень = 92</span>
         </div>
         <div className="div-border">
-            <div>Условный размер 4-го типа(Горбатка)<br/><strong>3x115(1)+120(2)</strong>
+            <div className="div-margin-top">Условный размер 4-го типа(Горбатка)<br/><strong>3x115(1)+120(2)</strong>
             </div>
             <img src="/img/type4.png"/>
-            Корень = 67
+            <span className="span-margin-top">Корень = 67</span>
         </div>
         <div className="div-border">
-            <div>Условный размер 5-го типа(Горбатка)<br/><strong>3x36(6)+40(5)</strong>
+            <div className="div-margin-top">Условный размер 5-го типа(Горбатка)<br/><strong>3x36(6)+40(5)</strong>
             </div>
             <img src="/img/type5.png"/>
-            Корень = 26
+            <span className="span-margin-top">Корень = 26</span>
         </div>
         <div className="div-border">
-            <div>Условный размер 6-го типа(Горбатка)<br/><strong>3x25(5)+100(1)</strong>
+            <div className="div-margin-top">Условный размер 6-го типа(Горбатка)<br/><strong>3x25(5)+100(1)</strong>
             </div>
             <img src="/img/type6.png"/>
-            Корень = 127.5
+            <span className="span-margin-top">Корень = 127.5</span>
         </div>
-         {/*<img width={35} height={35} onClick={()=>setManualProps(false)} src='/img/close-manual.svg'/>*/}
+         
         </div>
     )
 }
