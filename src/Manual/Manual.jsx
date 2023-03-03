@@ -19,7 +19,7 @@ function Manual({manualProps,setManualProps}){
         <div className="div-border">
             <div>Условный размер 3-го типа(Горбатка)<br/><strong>3x100(1)+115(1)+90(1)</strong>
             </div>
-            <img src="/img/type3.png"/>
+            <img src="src/assets/type3.png"/>
             Корень = 92
         </div>
         <div className="div-border">
