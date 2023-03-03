@@ -1,0 +1,32 @@
+.manual{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    top:85px;
+    transform: translateX(-100%);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    img{
+        width: 100%;
+    }
+    .div-border{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        border: 1px solid #B1B7BD;
+        padding: 5px;
+    }
+    
+}
+.manual.active{
+    transform: translateX(0);
+  
+}

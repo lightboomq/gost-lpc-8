@@ -9,6 +9,8 @@
     flex-direction: column;
     margin: auto;
     max-width: 900px;
+    height: 1000px;
+    position: relative;
     .scroll-to-up{
       display: none;
       position: fixed;
@@ -26,6 +28,7 @@
   }
     
     .main{ 
+     
       .img-gost-all{
         width: 100%; 
         margin-top: 15px;
@@ -48,6 +51,16 @@
           border-radius: 50px;
           cursor:pointer;    
         }
+        .info{
+          margin-right: 35px;
+          margin-top: 15px; 
+          cursor: pointer;
+        }
+      }
+      .main__block-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .main__search{
         display: flex;

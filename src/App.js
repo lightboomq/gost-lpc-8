@@ -1,5 +1,7 @@
 import './test.scss';
 import React from 'react';
+import Manual from './Manual/Manual';
+import "./Manual/manual.scss"
 import NotFound from './NotFound/NotFound';
 function App() {
   const [todo] = React.useState([
@@ -95,15 +97,16 @@ function App() {
   };
 
   const [searchValue,setSearchValue] = React.useState('');
-  const [size,setSize]= React.useState('');
-  const [sum,setSum]= React.useState('');
-
+  const [manual,setManual] = React.useState(false);
   
 
+  const [size,setSize]= React.useState('');
+  const [sum,setSum]= React.useState('');
   const [size5,setSize5]= React.useState('');
   const [sum3,setSum3]= React.useState('');
   const [size6,setSize6]= React.useState('');
   const [sum4,setSum4]= React.useState('');
+  
   
   
   function result(num1,num2){
@@ -131,11 +134,12 @@ function App() {
 
 function resultTwo(num1,num2,num3,num4){
   let value1,value2,value3,value4,value5,sum;
-  if (!num1||!num2){
+  if (!num1 || !num2){
     return false;
   }
   
-  if(num1<100&&num2<28 &&num3<28 &&num4<28 ){
+  if(num4&&num2<28&&num4<28 ){
+  console.log("if")
   value1=num1*num2 + ((num2-1)*3)+10;
   value3=value1;
   value2 = num3*num4 + ((num4-1)*3)+10;
@@ -144,19 +148,23 @@ function resultTwo(num1,num2,num3,num4){
   sum=(515-value5)/2;
   return sum;
 }
-
+else if(num1>num2 && num2>num3){
+  return false;
+}
 else if(num2>28 && !num3){
   value1=num1+num2+23;
   sum = (515-value1)/2;
   return sum;
 }
 else if(num2<28&&num3>28 ){
+  console.log("else if")
   value1=num1*num2 + (num2*3)+20
   value2=value1+num3
   sum=(515-value2)/2;
   return sum;
 }
-else{
+else { 
+  console.log("else ")
   value1=num1+num2+num3+26;
   sum=(515-value1)/2
   return sum;
@@ -238,13 +246,12 @@ else{
   function clearSearch(){
     setSearchValue("");
   }
- 
+  
   return (
     <>
       <div className="container">
-        <div className='main'>  
-        
-        {searchValue? "":<div className='grid'>
+        <div className='main'>
+            {searchValue? "":<div className='grid'>
             <input className='grid__input-1' value={size} onChange={handleChangeSizeValueInput} placeholder='р' />
             <input className='grid__input-2'value={sum} onChange={handleChangeSumValueInput} placeholder=' к-во ' /> 
             <div className='grid__1'>{result(size,sum)}</div>
@@ -260,8 +267,10 @@ else{
             <div className='grid__1' >{resultTwo(size5,sum3,size6,sum4)}</div>
             {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
-          
+          <Manual manualProps={manual} setManualProps={setManual}/>
           <div className='main__block-search'>
+              <div className='main__block-img'>
+              
               <div className='main__search'>
                 <img className='main__search-icon' width={20} height={20} src="/img/search-icon-input.svg" alt=""/>
                 <input value={searchValue} onChange={(event)=>setSearchValue(event.target.value)} placeholder='Поиск...'></input> 
@@ -269,6 +278,8 @@ else{
                 {searchValue?<img className='main__search-clear' onClick={()=>setSearchValue('') } width={17} height={17} src="/img/close-search-input.svg" alt=""/>:""}
               </div>
               
+            </div>
+            <img onClick={()=>setManual(!manual)} className='info' width={30} height={30} src="img/manual.png"/>
           </div>
     
           {todo.filter(function(obj){
