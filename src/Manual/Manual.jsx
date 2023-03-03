@@ -1,13 +1,13 @@
 import "./manual.scss"
-
+import photo from "../assets/type1.png";
 function Manual({manualProps,setManualProps}){
     return(
         <div className={manualProps?'manual active':'manual'}>
-            <strong>Инструкция вычисления разделительного ролика</strong>
+            <strong>Инструкция вычисления</strong>
         <div className="div-border">
             <div>Условный размер 1-го типа<br/><strong>3x70(5)</strong>
             </div>
-            <img src="/img/type1.png"/>
+            <img src={photo}/>
             Корень = 66.5
         </div>
         <div className="div-border">
@@ -19,7 +19,7 @@ function Manual({manualProps,setManualProps}){
         <div className="div-border">
             <div>Условный размер 3-го типа(Горбатка)<br/><strong>3x100(1)+115(1)+90(1)</strong>
             </div>
-            <img src="src/assets/type3.png"/>
+            <img src="../assets/type3.png"/>
             Корень = 92
         </div>
         <div className="div-border">
