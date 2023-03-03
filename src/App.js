@@ -256,7 +256,7 @@ else{
             <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1 '/>
             <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='р2 / к'/>
             <input className='grid__input-3' value={size6} onChange={handleChangeSize6ValueInput} placeholder='р3'/>
-            <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='р4 / к'/>
+            <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='к'/>
             <div className='grid__1' >{resultTwo(size5,sum3,size6,sum4)}</div>
             {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
