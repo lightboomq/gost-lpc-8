@@ -135,10 +135,13 @@ function resultTwo(num1,num2,num3,num4){
     return false;
   }
   
-  if(num2<28 && num4<28){
+  if(num2<28 && num3<28&&num4<28){
   value1=num1*num2 + ((num2-1)*3);
   console.log("if "+value1)
   value3=value1;
+  if(!num4){
+    return false;
+  }
   value2 = num3*num4 + ((num4-1)*3);
   value4 = value2
   value5=value3+value4+20;
@@ -150,6 +153,15 @@ else if(num2>28 && !num3){
   console.log("else if")
   value1=num1+num2+23;
   sum = (515-value1)/2;
+  return sum;
+}
+else if(num2<28&&num3>28){
+  console.log("ELSE IF")
+  value1=num1*num2 + ((num2-1)*3)+20
+  console.log("value1 "+value1)
+  value2=value1+num3
+  console.log("value2 "+ value2)
+  sum=(515-value2)/2;
   return sum;
 }
 else{
@@ -250,10 +262,10 @@ else{
           
           
           {searchValue? "":<div className='grid'>
-            <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1'/>
-            <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='р2/к-во'/>
+            <input className='grid__input-1' value={size5} onChange={handleChangeSize5ValueInput} placeholder='р1 '/>
+            <input className='grid__input-2' value={sum3} onChange={handleChangeSum3ValueInput} placeholder='р2 / к'/>
             <input className='grid__input-3' value={size6} onChange={handleChangeSize6ValueInput} placeholder='р3'/>
-            <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='к-во'/>
+            <input className='grid__input-2' value={sum4} onChange={handleChangeSum4ValueInput} placeholder='р4 / к'/>
             <div className='grid__1' >{resultTwo(size5,sum3,size6,sum4)}</div>
             {size5 || size6 || sum3 || sum4 ?<img onClick={clearAll} className={size5 || sum3 || size6 || sum4 ?'grid__4':'grid__1'} width={30} height={30} src="/img/close-input.svg" alt=""/>:""}
           </div>}
