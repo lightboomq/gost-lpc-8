@@ -138,8 +138,7 @@ function resultTwo(num1,num2,num3,num4){
     return false;
   }
   
-  if(num4&&num2<28&&num4<28 ){
-  console.log("if")
+  if(num4&&num2<28&&num4<28){
   value1=num1*num2 + ((num2-1)*3)+10;
   value3=value1;
   value2 = num3*num4 + ((num4-1)*3)+10;
@@ -157,14 +156,12 @@ else if(num2>28 && !num3){
   return sum;
 }
 else if(num2<28&&num3>28 ){
-  console.log("else if")
   value1=num1*num2 + (num2*3)+20
   value2=value1+num3
   sum=(515-value2)/2;
   return sum;
 }
 else { 
-  console.log("else ")
   value1=num1+num2+num3+26;
   sum=(515-value1)/2
   return sum;

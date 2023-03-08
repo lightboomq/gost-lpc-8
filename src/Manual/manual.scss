@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     visibility: hidden;
-    opacity: 0;
+    
     .close-manual-block{
         display: flex;
         justify-content: end;
@@ -52,5 +52,4 @@
 .manual.active{
     transform: translateX(0);
     visibility: visible;
-    opacity: 1;
 }
